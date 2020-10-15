@@ -1,0 +1,57 @@
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="py-5">Let's get you signed up</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-10">
+        <form (ngSubmit)="onSubmit()" [formGroup]="formGroup" class="text-left text-primary">
+          <div class="form-group">
+            <label for="firstName">First name</label>
+            <input class="form-control" formControlName="firstName" id="firstName" placeholder="John" type="text">
+            <div *ngIf="formGroup.get('firstName').invalid && (formGroup.get('firstName').dirty || formGroup.get('firstName').touched)">
+              <div class="alert alert-danger" role="alert">Please enter a valid first name.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input class="form-control" formControlName="lastName" id="lastName" placeholder="Doe" type="text">
+            <div *ngIf="formGroup.get('lastName').invalid && (formGroup.get('lastName').dirty || formGroup.get('lastName').touched)">
+              <div class="alert alert-danger" role="alert">Please enter a valid last name.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="birthday">Birthday</label>
+            <input class="form-control" formControlName="birthday" id="birthday" placeholder="YYYY-MM-DD" type="date">
+            <div *ngIf="formGroup.get('birthday').invalid && (formGroup.get('birthday').dirty || formGroup.get('birthday').touched)">
+              <div class="alert alert-danger" role="alert">Please enter a valid birthday.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone number</label>
+            <input class="form-control" formControlName="phoneNumber" id="phoneNumber" placeholder="514 123 4567" type="text">
+            <div *ngIf="formGroup.get('phoneNumber').invalid && (formGroup.get('phoneNumber').dirty || formGroup.get('phoneNumber').touched)">
+              <div class="alert alert-danger" role="alert">Please enter a valid phone number.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input class="form-control" formControlName="email" id="email" placeholder="john@doe.com" type="email">
+            <div *ngIf="formGroup.get('email').invalid && (formGroup.get('email').dirty || formGroup.get('email').touched)">
+              <div class="alert alert-danger" role="alert">Please enter a valid email.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input checked="checked" class="form-check-input" formControlName="isMessageOnBirthday" id="isMessageOnBirthday" type="checkbox">
+              <label class="form-check-label" for="isMessageOnBirthday">Send message on birthday</label>
+            </div>
+          </div>
+          <button [disabled]="formGroup.invalid" class="btn btn-outline-primary" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
