@@ -59,6 +59,10 @@ Run Spring Boot for a dev server. The detailed steps are as follows:
 - open backend folder with IDE Intellij IDEA
 - open file backend\src\main\resources\application.properties
 
+  - edit the value of the key "HeroForce.appServerUrl", this is the app server address. the default as follows:
+
+    HeroForce.appServerUrl=http://localhost:4200
+
   - edit the value of the key "HeroForce.myEmailAccount", this is the email address used to send mail. the default as follows:
 
     HeroForce.myEmailAccount=xxxxxxx@xxx.com
